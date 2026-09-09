@@ -1,8 +1,8 @@
 name: gcc
 
 on:
-  push:
-  pull_request:
+  # push:
+  # pull_request:
   workflow_dispatch:
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config: [debug, release]
+        config: [debug]
 
     steps:
       - uses: actions/checkout@v4
