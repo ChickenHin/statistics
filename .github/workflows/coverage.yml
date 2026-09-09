@@ -1,8 +1,8 @@
 name: coverage
 
 on:
-  push:
-  pull_request:
+  # push:
+  # pull_request:
   workflow_dispatch:
 
 permissions:
@@ -37,12 +37,12 @@ jobs:
           cpp-ci-clang
           bash ./coverage-report.sh
 
-      - name: Publish coverage summary
-        run: cat out/coverage/linux-clang-coverage/summary.txt >> "$GITHUB_STEP_SUMMARY"
+      # - name: Publish coverage summary
+      #   run: cat out/coverage/linux-clang-coverage/summary.txt >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload coverage artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-linux-clang
-          path: out/coverage/linux-clang-coverage
-          if-no-files-found: error
+      # - name: Upload coverage artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: coverage-linux-clang
+      #     path: out/coverage/linux-clang-coverage
+      #     if-no-files-found: error
